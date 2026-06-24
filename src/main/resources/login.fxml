@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.sistemanatacionapp.controller.LoginController"
+      alignment="CENTER" spacing="15" style="-fx-background-color: #1a1a2e;">
+
+    <padding>
+        <Insets top="60" right="60" bottom="60" left="60"/>
+    </padding>
+
+    <Label text="🏊 Sistema de Natación"
+           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+    <Label text="Iniciar Sesión"
+           style="-fx-font-size: 14px; -fx-text-fill: #aaaaaa;"/>
+
+    <TextField fx:id="txtUsuario" promptText="Usuario"
+               style="-fx-background-color: #2a2a4a; -fx-text-fill: white; -fx-prompt-text-fill: gray;"
+               maxWidth="300"/>
+
+    <PasswordField fx:id="txtContrasena" promptText="Contraseña"
+                   style="-fx-background-color: #2a2a4a; -fx-text-fill: white; -fx-prompt-text-fill: gray;"
+                   maxWidth="300"/>
+
+    <Button fx:id="btnLogin" text="Entrar" onAction="#handleLogin"
+            maxWidth="300"
+            style="-fx-background-color: #0f3460; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+    <Label fx:id="lblError" text=""
+           style="-fx-text-fill: #ff6b6b; -fx-font-size: 12px;"/>
+
+</VBox>

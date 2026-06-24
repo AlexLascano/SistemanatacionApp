@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.sistemanatacionapp.controller.CrudController"
+      spacing="10" style="-fx-background-color: #1a1a2e;">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="🏊 Registro de Participantes"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+    <HBox spacing="10">
+        <TextField fx:id="txtCedula" promptText="Cédula"
+                   style="-fx-background-color: #2a2a4a; -fx-text-fill: white; -fx-prompt-text-fill: gray;"
+                   prefWidth="150"/>
+        <TextField fx:id="txtNombre" promptText="Nombre"
+                   style="-fx-background-color: #2a2a4a; -fx-text-fill: white; -fx-prompt-text-fill: gray;"
+                   prefWidth="150"/>
+        <TextField fx:id="txtApellido" promptText="Apellido"
+                   style="-fx-background-color: #2a2a4a; -fx-text-fill: white; -fx-prompt-text-fill: gray;"
+                   prefWidth="150"/>
+        <TextField fx:id="txtEdad" promptText="Edad"
+                   style="-fx-background-color: #2a2a4a; -fx-text-fill: white; -fx-prompt-text-fill: gray;"
+                   prefWidth="80"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <TextField fx:id="txtCorreo" promptText="Correo"
+                   style="-fx-background-color: #2a2a4a; -fx-text-fill: white; -fx-prompt-text-fill: gray;"
+                   prefWidth="200"/>
+        <ComboBox fx:id="cmbCategoria" promptText="Categoría" prefWidth="150"
+                  style="-fx-background-color: #2a2a4a; -fx-text-fill: white;"/>
+    </HBox>
+
+    <HBox spacing="20">
+        <Label text="Género:" style="-fx-text-fill: white;"/>
+        <RadioButton fx:id="rbMasculino" text="Masculino"
+                     style="-fx-text-fill: white;">
+            <toggleGroup>
+                <ToggleGroup fx:id="generoGroup"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="rbFemenino" text="Femenino"
+                     style="-fx-text-fill: white;"
+                     toggleGroup="$generoGroup"/>
+    </HBox>
+
+    <TextArea fx:id="txtObservaciones" promptText="Observaciones"
+              style="-fx-background-color: #2a2a4a; -fx-text-fill: white; -fx-prompt-text-fill: gray;"
+              prefHeight="60"/>
+
+    <HBox spacing="10">
+        <Button text="➕ Crear" onAction="#handleCrear"
+                style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button text="🔄 Actualizar" onAction="#handleActualizar"
+                style="-fx-background-color: #ffc107; -fx-text-fill: black; -fx-font-weight: bold;"/>
+        <Button text="🗑 Eliminar" onAction="#handleEliminar"
+                style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button text="🧹 Limpiar" onAction="#handleLimpiar"
+                style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <Label fx:id="lblMensaje" text=""
+           style="-fx-text-fill: #00ff88; -fx-font-size: 12px;"/>
+
+    <TableView fx:id="tableView" prefHeight="300"
+               style="-fx-background-color: #2a2a4a;">
+        <columns>
+            <TableColumn fx:id="colCedula" text="Cédula" prefWidth="100"/>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="100"/>
+            <TableColumn fx:id="colApellido" text="Apellido" prefWidth="100"/>
+            <TableColumn fx:id="colEdad" text="Edad" prefWidth="60"/>
+            <TableColumn fx:id="colCorreo" text="Correo" prefWidth="150"/>
+            <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="90"/>
+            <TableColumn fx:id="colGenero" text="Género" prefWidth="90"/>
+        </columns>
+    </TableView>
+
+</VBox>
